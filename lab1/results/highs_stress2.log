@@ -1,0 +1,14 @@
+Running HiGHS 1.15.1 (git hash: 04024d7): Copyright (c) 2026 under MIT licence terms
+Includes third-party software components, see THIRD_PARTY_NOTICES.md for full details
+LP has 52 rows; 30 cols; 441 nonzeros
+Coefficient ranges:
+  Matrix  [5e-02, 3e+02]
+  Cost    [4e+01, 4e+03]
+  Bound   [0e+00, 0e+00]
+  RHS     [4e+00, 2e+03]
+Presolving model
+52 rows, 21 cols, 314 nonzeros 0s
+Problem status detected on presolve: Infeasible
+Model status        : Infeasible
+Objective value     :  0.0000000000e+00
+HiGHS run time      :          0.00

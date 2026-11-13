@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "variant": 16,
+    "N": 15,
+    "Q": 2,
+    "Y": 26,
+    "seed": 10215,
+    "units": {
+      "x": "кг корма на 1 голову в сутки",
+      "objective": "₽ в сутки",
+      "energy_MJ": "МДж обменной энергии",
+      "protein_g": "г",
+      "fat_g": "г",
+      "fiber_g": "г",
+      "calcium_g": "г"
+    }
+  },
+  "model_size": {
+    "variables": 30,
+    "constraints": 52,
+    "nonzeros": 441
+  },
+  "base": {
+    "status": "Optimal",
+    "objective": 2421.8627026081226,
+    "iterations": {
+      "simplex": 11,
+      "ipm": 0,
+      "crossover": 0
+    }
+  },
+  "check_base": {
+    "n": 95,
+    "all_ok": true,
+    "max_violation": 1.7763568394002505e-15,
+    "obj_recomputed": 2421.8627026081226
+  },
+  "key_feed": "Люцерна (сено)",
+  "infeasible_stress2": {
+    "iis": [
+      "norm[Зебра|fiber_g]",
+      "supply[Сено луговое]",
+      "supply[Люцерна (сено)]",
+      "supply[Морковь]",
+      "supply[Яблоки]",
+      "supply[Овёс]",
+      "supply[Комбикорм]"
+    ],
+    "elastic": [
+      {
+        "variant": "все ограничения",
+        "constraint": "norm[Зебра|fiber_g]",
+        "bound": "нижняя граница",
+        "rhs": 2015.638,
+        "relaxation": 296.97640668530283
+      },
+      {
+        "variant": "только запасы",
+        "constraint": "supply[Сено луговое]",
+        "bound": "верхняя граница",
+        "rhs": 38.472,
+        "relaxation": 13.777858540808296
+      },
+      {
+        "variant": "только нормы",
+        "constraint": "norm[Зебра|fiber_g]",
+        "bound": "нижняя граница",
+        "rhs": 2015.638,
+        "relaxation": 296.97640668530283
+      }
+    ]
+  },
+  "scenarios": [
+    {
+      "scenario": "base",
+      "description": "Базовый",
+      "status": "Optimal",
+      "objective_rub_day": 2421.8627026081226,
+      "delta_vs_base": 0.0,
+      "forecast_by_shadow_prices": 2421.8627026081226,
+      "simplex_iterations": 11,
+      "forecast_error": 0.0,
+      "check_all_ok": true,
+      "check_max_violation": 1.7763568394002505e-15,
+      "cost_per_head_zebra": 121.33834878414939,
+      "binding_supplies": "Люцерна (сено) (-17.46 ₽/кг)"
+    },
+    {
+      "scenario": "deficit",
+      "description": "Дефицит: запас «Люцерна (сено)» −20%",
+      "status": "Optimal",
+      "objective_rub_day": 2511.2014599563236,
+      "delta_vs_base": 89.33875734820094,
+      "forecast_by_shadow_prices": 2489.2826444561156,
+      "simplex_iterations": 13,
+      "forecast_error": 21.918815500207984,
+      "check_all_ok": true,
+      "check_max_violation": 1.3322676295501878e-15,
+      "cost_per_head_zebra": 131.5629387759818,
+      "binding_supplies": "Люцерна (сено) (-47.65 ₽/кг); Овёс (-22.79 ₽/кг)"
+    },
+    {
+      "scenario": "demand",
+      "description": "Рост спроса: поголовье всех видов +20%",
+      "status": "Optimal",
+      "objective_rub_day": 3061.444115312791,
+      "delta_vs_base": 639.5814127046683,
+      "forecast_by_shadow_prices": 2973.65518497774,
+      "simplex_iterations": 14,
+      "forecast_error": 87.78893033505074,
+      "check_all_ok": true,
+      "check_max_violation": 1.3322676295501878e-15,
+      "cost_per_head_zebra": 136.563184959857,
+      "binding_supplies": "Люцерна (сено) (-47.65 ₽/кг); Овёс (-22.79 ₽/кг)"
+    },
+    {
+      "scenario": "stress1",
+      "description": "Стресс-1: сено и люцерна −20% и поголовье +20%",
+      "status": "Optimal",
+      "objective_rub_day": 3285.5404200145813,
+      "delta_vs_base": 863.6777174064587,
+      "forecast_by_shadow_prices": 3041.075126825733,
+      "simplex_iterations": 14,
+      "forecast_error": 244.46529318884814,
+      "check_all_ok": true,
+      "check_max_violation": 7.105427357601002e-15,
+      "cost_per_head_zebra": 155.5530252904509,
+      "binding_supplies": "Сено луговое (-278.64 ₽/кг); Люцерна (сено) (-270.31 ₽/кг); Овёс (-88.30 ₽/кг); Комбикорм (-55.97 ₽/кг)"
+    },
+    {
+      "scenario": "stress2",
+      "description": "Стресс-2 (засуха): сено и люцерна −40% и поголовье +20%",
+      "status": "Infeasible",
+      "objective_rub_day": NaN,
+      "delta_vs_base": NaN,
+      "forecast_by_shadow_prices": 3108.495068673725,
+      "simplex_iterations": 0,
+      "forecast_error": NaN,
+      "check_all_ok": NaN,
+      "check_max_violation": NaN,
+      "cost_per_head_zebra": NaN,
+      "binding_supplies": NaN
+    }
+  ]
+}

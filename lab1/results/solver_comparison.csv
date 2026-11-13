@@ -1,0 +1,5 @@
+solver,presolve,status,objective,median_time_ms,iter_simplex,iter_ipm,iter_crossover
+simplex,on,Optimal,2421.8627026081226,0.5373000167310238,11,0,0
+simplex,off,Optimal,2421.862702608123,0.17994998779613525,13,0,0
+ipm,on,Optimal,2421.8627026081226,1.4911499893059954,0,8,0
+ipm,off,Optimal,2421.862702608123,1.155499994638376,0,9,0

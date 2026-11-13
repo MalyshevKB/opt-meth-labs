@@ -1,0 +1,4 @@
+animal,heads,max_intake_kg,max_share_single,min_animal_share,max_animal_share
+Зебра,8,12.0,0.6,0.0,0.0
+Шимпанзе,5,5.0,0.35,0.0,0.15
+Бурый медведь,3,15.0,0.4,0.3,0.7
