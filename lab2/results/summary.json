@@ -1,0 +1,284 @@
+{
+  "meta": {
+    "variant": 16,
+    "N": 15,
+    "Q": 2,
+    "Y": 26,
+    "seed": 10215,
+    "weeks": 4,
+    "pallets_per_truck": 33,
+    "units": {
+      "flow": "паллет за неделю",
+      "cost": "₽",
+      "distance": "км"
+    }
+  },
+  "model_size": {
+    "variables": 128,
+    "constraints": 32,
+    "nonzeros": 248,
+    "nodes": 32,
+    "transfer_arcs": 96
+  },
+  "base": {
+    "status": "Optimal",
+    "objective": 1359053.9599999997,
+    "simplex_iterations": 50,
+    "mip_nodes": -1,
+    "mip_gap": Infinity,
+    "mip_dual_bound": 0.0,
+    "integral_solution": true,
+    "transport_cost": 1103558.3599999999,
+    "holding_cost": 255495.59999999986,
+    "pallets_moved": 3010.0
+  },
+  "check_base": {
+    "n": 297,
+    "all_ok": true,
+    "max_violation": 2.3283064365386963e-10,
+    "by_type": {
+      "баланс узла": 32,
+      "дуга: поток ≤ пропускная способность": 96,
+      "дуга: поток ≥ 0": 96,
+      "остаток ≤ вместимость": 32,
+      "остаток ≥ 0": 32,
+      "страховой остаток в конце": 8,
+      "целевая функция (пересчёт vs солвер)": 1
+    }
+  },
+  "capacity_plus_one": {
+    "arc": "Центр→Север",
+    "week": 1,
+    "predicted": -482.01,
+    "actual": -482.0100000000093
+  },
+  "busiest_arc": {
+    "arc": "Центр→Северо-Запад",
+    "total_flow": 739.0,
+    "by_week": [
+      198.0,
+      198.0,
+      198.0,
+      145.0
+    ],
+    "cap": 198.0
+  },
+  "shortage_demand": [
+    {
+      "warehouse": "Север",
+      "week": 1,
+      "stock_end": 0.0,
+      "shortage": 19.0
+    },
+    {
+      "warehouse": "Север",
+      "week": 2,
+      "stock_end": 0.0,
+      "shortage": 22.19999999999999
+    },
+    {
+      "warehouse": "Север",
+      "week": 3,
+      "stock_end": 0.0,
+      "shortage": 0.5999999999999943
+    },
+    {
+      "warehouse": "Юг",
+      "week": 3,
+      "stock_end": 0.0,
+      "shortage": 94.8
+    },
+    {
+      "warehouse": "Север",
+      "week": 4,
+      "stock_end": 86.0,
+      "shortage": 128.6
+    },
+    {
+      "warehouse": "Юг",
+      "week": 4,
+      "stock_end": 46.0,
+      "shortage": 155.2
+    },
+    {
+      "warehouse": "Северо-Запад",
+      "week": 4,
+      "stock_end": 90.0,
+      "shortage": 15.399999999999864
+    }
+  ],
+  "max_demand_growth": 1.09100341796875,
+  "scenarios": [
+    {
+      "scenario": "base",
+      "description": "Базовый",
+      "status": "Optimal",
+      "objective_rub": 1359053.9599999997,
+      "delta_rub": 0.0,
+      "delta_pct": 0.0,
+      "check_all_ok": true,
+      "check_max_violation": 2.3283064365386963e-10,
+      "saturated_arcs": 17.0,
+      "pallets_moved": 3010.0,
+      "forecast_by_shadow_price": NaN,
+      "min_shortage_pallets": NaN
+    },
+    {
+      "scenario": "overload",
+      "description": "Перегрузка: пропускная способность Центр→Северо-Запад −50%",
+      "status": "Optimal",
+      "objective_rub": 1476832.11,
+      "delta_rub": 117778.15000000037,
+      "delta_pct": 8.666186440456002,
+      "check_all_ok": true,
+      "check_max_violation": 2.3283064365386963e-10,
+      "saturated_arcs": 23.0,
+      "pallets_moved": 3340.0,
+      "forecast_by_shadow_price": 1369033.1599999997,
+      "min_shortage_pallets": NaN
+    },
+    {
+      "scenario": "failure",
+      "description": "Отказ участка: дорога Центр—Северо-Запад закрыта",
+      "status": "Optimal",
+      "objective_rub": 1811091.0299999998,
+      "delta_rub": 452037.07000000007,
+      "delta_pct": 33.26115690064286,
+      "check_all_ok": true,
+      "check_max_violation": 4.656612873077393e-10,
+      "saturated_arcs": 23.0,
+      "pallets_moved": 4132.0,
+      "forecast_by_shadow_price": NaN,
+      "min_shortage_pallets": NaN
+    },
+    {
+      "scenario": "demand",
+      "description": "Рост спроса +20% на всех складах",
+      "status": "Infeasible",
+      "objective_rub": NaN,
+      "delta_rub": NaN,
+      "delta_pct": NaN,
+      "check_all_ok": NaN,
+      "check_max_violation": NaN,
+      "saturated_arcs": NaN,
+      "pallets_moved": NaN,
+      "forecast_by_shadow_price": NaN,
+      "min_shortage_pallets": 435.79999999999984
+    },
+    {
+      "scenario": "stress",
+      "description": "Стресс: отказ дороги и рост спроса +5%",
+      "status": "Optimal",
+      "objective_rub": 1938440.7845000008,
+      "delta_rub": 579386.824500001,
+      "delta_pct": 42.6316277022585,
+      "check_all_ok": true,
+      "check_max_violation": 4.656612873077393e-10,
+      "saturated_arcs": 25.0,
+      "pallets_moved": 4464.700000000001,
+      "forecast_by_shadow_price": NaN,
+      "min_shortage_pallets": NaN
+    }
+  ],
+  "supply_balance": {
+    "total_supply": 4908.0,
+    "total_demand": 3999.0,
+    "safety": 545.0
+  },
+  "greedy": {
+    "cost_without_shortage": 1304666.5,
+    "shortage_pallets": 287.0,
+    "cost_with_emergency": 1735166.5,
+    "time_s": 0.004237000015564263,
+    "lp_time_s": 0.004495500004850328,
+    "lp_cost": 1359053.9599999997,
+    "lp_elastic_cost": 1359053.9599999997,
+    "gap_pct": 27.674584753058685,
+    "check_ok_with_shortage_as_supply": true,
+    "shortage_by_node": [
+      {
+        "warehouse": "Юго-Восток",
+        "week": 4,
+        "stock_end": 67.0,
+        "shortage": 69.0
+      },
+      {
+        "warehouse": "Юг",
+        "week": 4,
+        "stock_end": 46.0,
+        "shortage": 137.0
+      },
+      {
+        "warehouse": "Запад",
+        "week": 4,
+        "stock_end": 58.0,
+        "shortage": 41.0
+      },
+      {
+        "warehouse": "Северо-Запад",
+        "week": 4,
+        "stock_end": 90.0,
+        "shortage": 40.0
+      }
+    ],
+    "pallets_moved": 2699.0
+  },
+  "milp": {
+    "lp_relaxation": 1359049.084848485,
+    "lp_original": 1359053.9599999997,
+    "milp_objective": 1379831.4999999336,
+    "milp_status": "Optimal",
+    "milp_time_s": 21.768908900005044,
+    "lp_time_s": 0.0012177999888081104,
+    "milp_default_gap_objective": 1379831.499999999,
+    "milp_default_gap_time_s": 24.963587700010976,
+    "milp_default_gap_nodes": 15198,
+    "milp_default_gap_final": 9.993973901828482e-05,
+    "mip_nodes": 17966,
+    "mip_gap": 0.0,
+    "integrality_gap_pct": 1.5291879729101732,
+    "naive_rounding_cost": 1411080.6,
+    "naive_vs_milp_pct": 2.2647040598847035,
+    "milp_trucks": 92.99999999999233,
+    "lp_trucks_fractional": 91.21212121212122,
+    "lp_trucks_rounded": 96.0,
+    "milp_avg_load_pct": 98.0775496890286,
+    "lp_rounded_avg_load_pct": 95.01262626262626,
+    "milp_pallets_moved": 3010.0000000000005,
+    "lp_pallets_moved": 3010.0,
+    "check_ok": true,
+    "check_n": 585,
+    "scaling": [
+      {
+        "weeks": 4,
+        "int_vars": 192,
+        "lp_time_s": 0.0012177999888081104,
+        "milp_time_s": 21.768908900005044,
+        "milp_status": "Optimal",
+        "nodes": 17966,
+        "final_mip_gap_pct": 0.0,
+        "gap_to_lp_pct": 1.5291879729101732
+      },
+      {
+        "weeks": 8,
+        "int_vars": 384,
+        "lp_time_s": 0.0022563999809790403,
+        "milp_time_s": 30.01759360000142,
+        "milp_status": "Time limit reached",
+        "nodes": 5148,
+        "final_mip_gap_pct": 0.936854713374212,
+        "gap_to_lp_pct": 1.2019182445786925
+      },
+      {
+        "weeks": 12,
+        "int_vars": 576,
+        "lp_time_s": 0.0044122000108473,
+        "milp_time_s": 30.017137200018624,
+        "milp_status": "Time limit reached",
+        "nodes": 2970,
+        "final_mip_gap_pct": 0.37307281298614753,
+        "gap_to_lp_pct": 0.6527616119454072
+      }
+    ]
+  }
+}

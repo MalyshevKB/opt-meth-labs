@@ -1,0 +1,14 @@
+{
+  "variant": 16,
+  "N": 15,
+  "Q": 2,
+  "Y": 26,
+  "seed": 10215,
+  "weeks": 4,
+  "pallets_per_truck": 33,
+  "units": {
+    "flow": "паллет за неделю",
+    "cost": "₽",
+    "distance": "км"
+  }
+}
