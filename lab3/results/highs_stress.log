@@ -1,0 +1,76 @@
+Running HiGHS 1.15.1 (git hash: 04024d7): Copyright (c) 2026 under MIT licence terms
+Includes third-party software components, see THIRD_PARTY_NOTICES.md for full details
+MIP has 50 rows; 92 cols; 349 nonzeros; 84 integer variables (74 binary)
+Coefficient ranges:
+  Matrix  [1e+00, 2e+02]
+  Cost    [2e+03, 2e+06]
+  Bound   [1e+00, 1e+00]
+  RHS     [1e+00, 2e+02]
+WARNING: Problem has some excessively large costs
+WARNING:    Consider scaling the objective by 1e-1, or setting the user_objective_scale option to -2
+Presolving model
+44 rows, 76 cols, 294 nonzeros 0s
+43 rows, 76 cols, 323 nonzeros 0s
+Presolve reductions: rows 43(-7); columns 76(-16); nonzeros 323(-26) 
+
+Solving MIP model with:
+   43 rows
+   76 cols (71 binary, 0 integer, 5 implied int., 0 continuous, 0 domain fixed)
+   323 nonzeros
+   Thread count 8 (of 16 threads). Using 1 max workers. Parallel search off
+
+Src: B => Branching; C => Central rounding; F => Feasibility pump; H => Heuristic;
+     I => Shifting; J => Feasibility jump; L => Sub-MIP; P => Empty MIP; R => Randomized rounding;
+     S => Solve LP; T => Evaluate node; U => Unbounded; X => User solution; Y => HiGHS solution;
+     Z => ZI Round; l => Trivial lower; p => Trivial point; u => Trivial upper; z => Trivial zero
+
+        Nodes      |    B&B Tree     |            Objective Bounds              |  Dynamic Constraints |       Work      
+Src  Proc. InQueue |  Leaves   Expl. | BestBound       BestSol              Gap |   Cuts   InLp Confl. | LpIters     Time
+
+ J       0       0         0   0.00%   -inf            8604870.710297     Large        0      0      0         0     0.0s
+ R       0       0         0   0.00%   4079226.60057   7137300.388463    42.85%        0      0      0        49     0.0s
+ L       0       0         0   0.00%   4279941.195909  4333004.804864     1.22%     1081     36      6       164     0.1s
+ H       0       0         0   0.00%   4286641.639783  4333004.804864     1.07%     1163     39      6       320     0.1s
+
+40.8% inactive integer columns, restarting
+Model after restart has 35 rows, 44 cols (41 bin., 0 int., 3 impl., 0 cont., 0 dom.fix.), and 184 nonzeros
+
+         0       0         0   0.00%   4286641.639783  4333004.804864     1.07%       19      0      0       340     0.1s
+         0       0         0   0.00%   4287410.769861  4333004.804864     1.05%       19     16      4       379     0.1s
+
+12.2% inactive integer columns, restarting
+Model after restart has 30 rows, 39 cols (36 bin., 0 int., 3 impl., 0 cont., 0 dom.fix.), and 153 nonzeros
+
+         0       0         0   0.00%   4290568.015818  4333004.804864     0.98%       13      0      0       556     0.2s
+         0       0         0   0.00%   4290630.19088   4333004.804864     0.98%       13     13      2       584     0.2s
+ B       0       0         0   0.00%   4309252.816281  4333004.804864     0.55%      901     17      9       734     0.3s
+         1       0         1 100.00%   4333004.804864  4333004.804864     0.00%      906     17     20       912     0.3s
+
+Solving report
+  Status            Optimal
+  Primal bound      4333004.80486
+  Dual bound        4333004.80486
+  Gap               0% (tolerance: 0.01%)
+  P-D integral      0.0421761042347
+  Solution status   feasible
+                    4333004.80486 (objective)
+                    0 (bound viol.)
+                    7.68274333041e-14 (int. viol.)
+                    0 (row viol.)
+  Timing            0.31
+                    0.01 (Presolve)
+                        MIP    time [calls] = 0.00 [1]
+                        subMIP time [calls] = 0.01 [12]
+                    0.29 (Solve)
+                        MIP    time [calls] = 0.12 [1]
+                        subMIP time [calls] = 0.17 [12]
+                    0.00 (Postsolve)
+                        MIP    time [calls] = 0.00 [1]
+                        subMIP time [calls] = 0.00 [12]
+  Max sub-MIP depth 4
+  Nodes             1
+  Repair LPs        0
+  LP iterations     912
+                    85 (strong br.)
+                    227 (separation)
+                    447 (heuristics)

@@ -1,0 +1,18 @@
+{
+  "variant": 16,
+  "N": 15,
+  "Q": 2,
+  "Y": 26,
+  "seed": 10215,
+  "weeks": 8,
+  "max_units_down": 3,
+  "contractor_max_hours": 200,
+  "contractor_rate_rub_per_hour": 2500,
+  "contractor_mobilization_rub": 150000,
+  "post_horizon_weeks": 4,
+  "units": {
+    "time": "неделя",
+    "crew": "бригадо-часы",
+    "money": "₽"
+  }
+}

@@ -1,0 +1,70 @@
+Running HiGHS 1.15.1 (git hash: 04024d7): Copyright (c) 2026 under MIT licence terms
+Includes third-party software components, see THIRD_PARTY_NOTICES.md for full details
+MIP has 50 rows; 92 cols; 352 nonzeros; 84 integer variables (77 binary)
+Coefficient ranges:
+  Matrix  [1e+00, 2e+02]
+  Cost    [2e+03, 2e+06]
+  Bound   [1e+00, 1e+00]
+  RHS     [1e+00, 2e+02]
+WARNING: Problem has some excessively large costs
+WARNING:    Consider scaling the objective by 1e-1, or setting the user_objective_scale option to -2
+Presolving model
+47 rows, 82 cols, 303 nonzeros 0s
+46 rows, 82 cols, 304 nonzeros 0s
+Presolve reductions: rows 46(-4); columns 82(-10); nonzeros 304(-48) 
+
+Solving MIP model with:
+   46 rows
+   82 cols (74 binary, 0 integer, 8 implied int., 0 continuous, 0 domain fixed)
+   304 nonzeros
+   Thread count 8 (of 16 threads). Using 1 max workers. Parallel search off
+
+Src: B => Branching; C => Central rounding; F => Feasibility pump; H => Heuristic;
+     I => Shifting; J => Feasibility jump; L => Sub-MIP; P => Empty MIP; R => Randomized rounding;
+     S => Solve LP; T => Evaluate node; U => Unbounded; X => User solution; Y => HiGHS solution;
+     Z => ZI Round; l => Trivial lower; p => Trivial point; u => Trivial upper; z => Trivial zero
+
+        Nodes      |    B&B Tree     |            Objective Bounds              |  Dynamic Constraints |       Work      
+Src  Proc. InQueue |  Leaves   Expl. | BestBound       BestSol              Gap |   Cuts   InLp Confl. | LpIters     Time
+
+ J       0       0         0   0.00%   -inf            9600157.756633     Large        0      0      0         0     0.0s
+ R       0       0         0   0.00%   4064543.181389  8639091.928845    52.95%        0      0      0        32     0.0s
+ C       0       0         0   0.00%   4156843.788755  8530067.604819    51.27%      275     20      0        71     0.0s
+ L       0       0         0   0.00%   4191217.456846  4259668.356336     1.61%      991     33      0       135     0.1s
+
+37.8% inactive integer columns, restarting
+Model after restart has 32 rows, 48 cols (44 bin., 0 int., 4 impl., 0 cont., 0 dom.fix.), and 179 nonzeros
+
+         0       0         0   0.00%   4197370.231651  4259668.356336     1.46%       13      0      0       363     0.2s
+         0       0         0   0.00%   4197370.231651  4259668.356336     1.46%       13     13      2       391     0.2s
+ B       2       0         1  50.00%   4210901.305944  4259668.356335     1.14%      970     17     59       997     0.3s
+         3       0         2 100.00%   4259668.356335  4259668.356335     0.00%      972     17     60      1476     0.3s
+
+Solving report
+  Status            Optimal
+  Primal bound      4259668.35634
+  Dual bound        4259668.35634
+  Gap               0% (tolerance: 0.01%)
+  P-D integral      0.0710747661594
+  Solution status   feasible
+                    4259668.35634 (objective)
+                    0 (bound viol.)
+                    1.39355194051e-12 (int. viol.)
+                    0 (row viol.)
+  Timing            0.34
+                    0.01 (Presolve)
+                        MIP    time [calls] = 0.00 [1]
+                        subMIP time [calls] = 0.01 [12]
+                    0.32 (Solve)
+                        MIP    time [calls] = 0.13 [1]
+                        subMIP time [calls] = 0.20 [12]
+                    0.00 (Postsolve)
+                        MIP    time [calls] = 0.00 [1]
+                        subMIP time [calls] = 0.00 [12]
+  Max sub-MIP depth 6
+  Nodes             3
+  Repair LPs        0
+  LP iterations     1476
+                    671 (strong br.)
+                    192 (separation)
+                    451 (heuristics)

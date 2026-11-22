@@ -1,0 +1,10 @@
+check,absolute_error,tolerance,ok
+primal_nonnegativity,0,1e-07,True
+dual_nonnegativity,0,1e-07,True
+primal_constraints,6.66133814775e-16,1e-07,True
+dual_constraints,5.68434188608e-14,1e-07,True
+row_complementarity,1.67707554943e-13,1e-07,True
+column_complementarity,2.01509498648e-13,1e-07,True
+primal_objective_recalculation,0,1e-07,True
+dual_objective_recalculation,0,1e-07,True
+duality_gap,0,1e-07,True
